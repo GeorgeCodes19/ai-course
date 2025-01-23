@@ -1,3 +1,32 @@
+# LLM Textbook – README
+
+Welcome to the **LLM Textbook** repository! This project aims to build a comprehensive curriculum for Large Language Models and fundamental AI concepts, written entirely in Markdown.
+
+---
+
+## How to View Math in This Repository
+
+By default, GitHub’s native Markdown viewer **does not** render LaTeX equations out of the box. This means you might see raw LaTeX code like `$$ E = mc^2 $$` instead of nicely formatted math.
+
+**To fix this**, you have a few options:
+
+1. **Use a Browser Extension**  
+   - For Chrome users, you can try [GitHub + LaTeX](https://chrome.google.com/webstore/detail/github-%2B-latex/djnbhjggabhfhddaieieeehjidicbgef) or a similar MathJax plugin.  
+   - For Firefox, look for “MathJax” or “LaTeX” rendering extensions.
+
+2. **Host on a Static Site Generator**  
+   - If you host these Markdown files via [GitHub Pages](https://pages.github.com/) or [MkDocs](https://www.mkdocs.org/), you can enable MathJax/Katex plugins.  
+   - For example, [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) has a built-in math extension that renders `$...$` and `$$...$$` expressions nicely.
+
+3. **Local Viewing with a Markdown Editor**  
+   - Editors like [Typora](https://typora.io/) or [Obsidian](https://obsidian.md/) can render LaTeX properly out of the box.
+
+---
+
+## Repository Structure
+
+Here’s an overview of the repo layout:
+
 # **LLM Textbook: A Comprehensive 3-Month Curriculum & Business of AI**  
 **(Approx. 100+ Pages of Detailed Instruction, Dictionary, and Explanatory Notes)**
 
