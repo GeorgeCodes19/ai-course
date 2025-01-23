@@ -349,13 +349,13 @@ System message: You are an AI assistant with the following relevant documents:
 User message: {user_query}
 
 Instructions: Provide an answer strictly based on the retrieved documents. If something is not covered, say "Not sure".
-
+```
 Tips:
 	•	Limit the chunk text size so total tokens remain under the model context limit.
 	•	Potentially do a “merge or re-rank” step if multiple chunks partially overlap.
 	•	Include disclaimers or instructions to reduce overconfidence or guesswork.
 
-7.4 Fine-Tuning, Quantization, & LoRA Techniques
+### **7.4 Fine-Tuning, Quantization, & LoRA Techniques**
 	1.	Full Fine-Tuning: Adjust all LLM parameters on domain data (costly for big models).
 	2.	Parameter-Efficient:
 	•	LoRA: Insert low-rank adapters in attention matrices, drastically reducing GPU VRAM usage.
@@ -364,38 +364,38 @@ Tips:
 	•	Post-Training Quantization for inference-only optimization.
 	•	Quantization-Aware Training yields better accuracy at lower bit precision.
 
-7.5 Production Deployment & Monitoring
+### 7.5 Production Deployment & Monitoring
 	•	Serving: A FastAPI or Node.js microservice that handles user queries, runs retrieval, and calls the LLM.
 	•	Caching: If queries repeat, caching embeddings or search results can reduce overhead.
 	•	Observability: Log retrieval hits, final answers, latencies. Tools like Prometheus and Grafana can track performance in real time.
 	•	Ethical & Content Moderation: Integrate text classification or content filters before final answers are delivered to end users.
 
-8. Current Research & Opportunities
+## 8. Current Research & Opportunities
 
-8.1 LLM Alignment & Reinforcement Learning from Human Feedback
+### 8.1 LLM Alignment & Reinforcement Learning from Human Feedback
 	•	RLHF: Models are fine-tuned with a reward signal from human-validated “good” vs. “bad” outputs. GPT-4, Claude, and others incorporate these alignment strategies.
 	•	Constitutional AI (Anthropic): The model references a “constitution” of guidelines, self-critiquing outputs to reduce harmful content.
 	•	Challenges: Overalignment might hamper creativity or lead to self-censorship. Misalignment can cause offensive or misleading outputs.
 
-8.2 Longer Context Windows & Hierarchical Models
+### 8.2 Longer Context Windows & Hierarchical Models
 	•	Extended Context: GPT-4’s 32k context, specialized models like LongT5 or BigBird that handle 8k–32k tokens.
 	•	Hierarchical Summaries: Summaries of long documents feeding a second pass.
 	•	Memory Augmentation: Persistent memory modules that store conversation or doc context across multiple turns beyond a single pass.
 
-8.3 Adaptive Retrieval & Multi-Hop Reasoning
+### 8.3 Adaptive Retrieval & Multi-Hop Reasoning
 	•	Adaptive Retrieval: Dynamically determining how many chunks or which retrieval strategy (e.g., if the user question is broad vs. deep).
 	•	Multi-Hop: If the user question spans multiple doc references, the system might do iterative retrieval steps, each refined by the previous chunk.
 	•	Chain-of-Thought: Prompt techniques that encourage the model to reason step-by-step, verifying partial info from retrieval each time.
 
-8.4 Hardware Innovations & Energy Efficiency
+### 8.4 Hardware Innovations & Energy Efficiency
 	•	Sparse Computations: Possibly skipping unimportant tokens or dimensions, reducing FLOPs.
 	•	In-Network Processing: Pushing compute into the network fabric.
 	•	3D-Stacked Memory: Even faster than current HBM, bridging memory bandwidth gaps.
 	•	Green AI: Minimizing carbon footprint through distributed training near renewable energy sources or via more efficient model designs.
 
-9. Ethical & Societal Considerations
+## 9. Ethical & Societal Considerations
 
-9.1 Bias & Fairness in RAG Systems
+### 9.1 Bias & Fairness in RAG Systems
 	•	Data Ingestion: If your external corpus is biased or incomplete, RAG might reinforce biases.
 	•	Retrieval Step: Some chunk-level retrieval might ignore minority viewpoints or underrepresented data.
 	•	Mitigations:
@@ -403,17 +403,17 @@ Tips:
 	•	Weighted chunk sampling.
 	•	Post-generation re-checks for harmful biases.
 
-9.2 Privacy & Proprietary Data
+### 9.2 Privacy & Proprietary Data
 	•	User Queries: If queries contain sensitive info, storing them in logs or embeddings might be a privacy risk.
 	•	Enterprise IP: Companies may not want their internal docs used to fine-tune a public model.
 	•	On-Premise RAG: Self-hosting ensures data never leaves the corporate environment, though HPC resources must be available.
 
-9.3 Open Science vs. Commercial Secrecy
+### 9.3 Open Science vs. Commercial Secrecy
 	•	The largest models often remain proprietary for competitive or safety reasons (e.g., GPT-4’s training specifics).
 	•	Open-source communities argue that transparency fosters more robust research, reproducibility, and oversight.
 	•	In RAG, because partial knowledge is external, some synergy between open data and private LLMs may be possible—at least for domain-specific tasks.
 
-10. Glossary of Key Terms
+### 10. Glossary of Key Terms
 
 Below are key terms spanning LLMs, RAG, and hardware, explained in fuller context:
 	1.	Transformer
